@@ -1,0 +1,4 @@
+/* 创建一个tailwindcss.css样式文件，用于初始化并引入tailwindcss的基础样式 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
