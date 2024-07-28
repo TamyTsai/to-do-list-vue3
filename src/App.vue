@@ -83,78 +83,81 @@
 
 <template>
 
-  <main class="app">
+    <main class="app">
 
-    <section class="greeting">
-      <h2 class="title">
-        你好, <input type="text" placeholder="輸入你的名字" v-model="name">
-      </h2>
-    </section>
+        <section class="bg-gray-100 max-w-3xl mx-auto p-5 rounded-lg shadow-lg">
+          <section class="greeting">
+            <h2 class="title">
+              <span>你好, </span><input type="text" placeholder="輸入你的名字" v-model="name">
+            </h2>
+          </section>
 
-    <section class="create-todo">
-      <h3>建立待辦事項</h3>
+          <section class="create-todo">
+            <h3 class="text-xl mt-3 mb-2 font-bold">建立待辦事項</h3>
 
-      <!-- 新增待辦事項 表單區 -->
-      <form @submit.prevent="addTodo">
-      <!-- ＠為v-on簡寫 -->
-      <!-- 有一顆按鈕，但是我不希望他就這樣直接submit出去，那怎麼辦？我還是希望他按下按鈕之後會跑出“here I am！”，但是他不要送出資訊轉到submit.html，那這時我們要怎麼做？很簡單，我們只要寫v-on:submit.prevent就好了 -->
-        <h4>你有什麼待辦事項呢？</h4>
-        <input type="text" name="content" id="content" placeholder="例如：寫作業" v-model="input_content">
-        <!-- 雙向綁定 input_content 讓此變數的值可以透過輸入輸入框來改變-->
+            <!-- 新增待辦事項 表單區 -->
+            <form @submit.prevent="addTodo">
+            <!-- ＠為v-on簡寫 -->
+            <!-- 有一顆按鈕，但是我不希望他就這樣直接submit出去，那怎麼辦？我還是希望他按下按鈕之後會跑出“here I am！”，但是他不要送出資訊轉到submit.html，那這時我們要怎麼做？很簡單，我們只要寫v-on:submit.prevent就好了 -->
+              <h4 class="text-gray-500 my-1">今天有什麼待辦事項呢？</h4>
+              <input type="text" name="content" id="content" placeholder="例如：寫作業" v-model="input_content">
+              <!-- 雙向綁定 input_content 讓此變數的值可以透過輸入輸入框來改變-->
 
-        <h4>選擇分類</h4>
+              <h4 class="text-xl mt-3 mb-2 font-bold">選擇分類</h4>
 
-        <div class="options">
+              <div class="options">
 
-          <label>
-            <!-- radio為單選 同一組選項name要一樣 選項間的value要不同 -->
-            <input type="radio" name="category" value="business" v-model="input_category" />
-            <span class="bubble business"></span>
-            <div>工作</div>
-          </label>
+                <label>
+                  <!-- radio為單選 同一組選項name要一樣 選項間的value要不同 -->
+                  <input type="radio" name="category" value="business" v-model="input_category" />
+                  <span class="bubble business"></span>
+                  <div>工作</div>
+                </label>
 
-          <label>
-            <input type="radio" name="category" value="personal" v-model="input_category" />
-            <span class="bubble personal"></span>
-            <div>私人</div>
-          </label>
+                <label>
+                  <input type="radio" name="category" value="personal" v-model="input_category" />
+                  <span class="bubble personal"></span>
+                  <div>私人</div>
+                </label>
 
-        </div>
+              </div>
 
-        <input type="submit" value="新增待辦" />
-      </form>
-    </section>
-    
-    <!-- 已建立 之 待辦事項清單 區塊 -->
-    <section class="todo-list">
-      <h3>待辦清單</h3>
-      <div class="list">
+              <input type="submit" value="新增待辦"/>
+            </form>
+          </section>
+          
+          <!-- 已建立 之 待辦事項清單 區塊 -->
+          <section class="todo-list">
+            <h3>待辦清單</h3>
+            <div class="list">
 
-        <!-- 把 排序過的待辦清單陣列（todos_asc）中 的 待辦事項元素（todo） 透過迴圈轉出來-->
-        <div v-for="todo in todos_asc" :class="`todo-item ${todo.done && 'done'}`">
-        <!-- todo.done 可取得 待辦事項元素（todo） done屬性所對應的value -->
-        <!-- :class="...." 為 v-bind:class="...." 簡寫 -->
+              <!-- 把 排序過的待辦清單陣列（todos_asc）中 的 待辦事項元素（todo） 透過迴圈轉出來-->
+              <div v-for="todo in todos_asc" :class="`todo-item ${todo.done && 'done'}`">
+              <!-- todo.done 可取得 待辦事項元素（todo） done屬性所對應的value -->
+              <!-- :class="...." 為 v-bind:class="...." 簡寫 -->
 
-          <label>
-            <input type="checkbox" v-model="todo.done" />
-            <!-- 勾選框的值與 todo物件的done屬性之值雙向綁定，當使用者勾選輸入框時，該待辦事項的done值變成true -->
-            <span :class="`bubble ${ todo.category }`"></span>
-          </label>
+                <label>
+                  <input type="checkbox" v-model="todo.done" />
+                  <!-- 勾選框的值與 todo物件的done屬性之值雙向綁定，當使用者勾選輸入框時，該待辦事項的done值變成true -->
+                  <span :class="`bubble ${ todo.category }`"></span>
+                </label>
 
-          <div class="todo-content">
-            <input type="text" v-model="todo.content" />
-            <!-- 已建立之待辦事項 內容編輯區域 -->
-            <!-- 雙向綁定 todo物件的content屬性之值，使用者 於 輸入框 更新待辦事項內容時，該待辦事項的content值隨之改變 -->
-          </div>
+                <div class="todo-content">
+                  <input type="text" v-model="todo.content" />
+                  <!-- 已建立之待辦事項 內容編輯區域 -->
+                  <!-- 雙向綁定 todo物件的content屬性之值，使用者 於 輸入框 更新待辦事項內容時，該待辦事項的content值隨之改變 -->
+                </div>
 
-          <div class="actions">
-            <button class="delete" @click="removeTodo(todo)">刪除</button>
-          </div>
+                <div class="actions">
+                  <button class="delete" @click="removeTodo(todo)">刪除</button>
+                </div>
 
-        </div>
+              </div>
 
-      </div>
-    </section>
-  </main>
+            </div>
+          </section>
+        </section>
+
+    </main>
 
 </template>

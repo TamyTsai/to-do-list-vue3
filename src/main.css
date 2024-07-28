@@ -1,14 +1,16 @@
 :root {
+/* ，只有 :root 才能搭配宣告全域 CSS 變數，利用 :root 設定變數 — first-color: #488cff ，即可在全域使用該變數。 */
 	--primary: #EA40A4;
 	--business: #3A82EE;
 	--personal: var(--primary);
-	--light: #EEE;
+	--light: #99f6e4;
 	--grey: #888;
 	--dark: #313154;
 	--danger: #ff5b57;
 
 	--shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
+	/* radio外框光暈 */
 	--business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
 	--personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
 }
@@ -48,8 +50,8 @@ h3 {
 }
 
 h4 {
-	color: var(--grey);
-	font-size: 0.875rem;
+	/* color: var(--grey); */
+	/* font-size: 0.875rem; */
 	font-weight: 700;
 	margin-bottom: 0.5rem;
 }
@@ -102,15 +104,17 @@ h4 {
 	cursor: pointer;
 }
 
+/* 預設選取框 */
 input[type="radio"],
 input[type="checkbox"] {
 	display: none;
 }
 
+/* 全部選取框（工作） */
 .bubble {
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	align-items: center; /* 上下置中 */
+	justify-content: center; /* 左右置中 */
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
@@ -118,11 +122,13 @@ input[type="checkbox"] {
 	box-shadow: var(--business-glow);
 }
 
+/* 私人 選取框 */
 .bubble.personal {
 	border-color: var(--personal);
 	box-shadow: var(--personal-glow);
 }
 
+/* 全部選取框選取時（工作） */
 .bubble::after {
 	content: "";
 	display: block;
@@ -132,9 +138,10 @@ input[type="checkbox"] {
 	background-color: var(--business);
 	box-shadow: var(--business-glow);
 	border-radius: 50%;
-	transition: 0.2s ease-in-out;
+	transition: 0.2s ease-in-out; /* 選取 動畫 */
 }
 
+/* 私人 選取框選取時 */
 .bubble.personal::after {
 	background-color: var(--personal);
 	box-shadow: var(--personal-glow);
@@ -143,7 +150,7 @@ input[type="checkbox"] {
 input:checked ~ .bubble::after {
 	width: 10px;
 	height: 10px;
-	opacity: 1;
+	opacity: 1; /* 完全不透明 */
 }
 
 .create-todo .options label div {
@@ -158,15 +165,17 @@ input:checked ~ .bubble::after {
 	font-size: 1.125rem;
 	padding: 1rem 1.5rem;
 	color: #FFF;
-	background-color: var(--primary);
+	background-color: rgb(13 148 136);
+	/* background-color: var(--primary); */
 	border-radius: 0.5rem;
-	box-shadow: var(--personal-glow);
+	/* box-shadow: var(--personal-glow); */
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
 }
 
 .create-todo input[type="submit"]:hover {
 	opacity: 0.75;
+	/* 滑鼠指向 新增待辦 按鈕時 透明度變成75% */
 }
 
 .todo-list .list {
@@ -175,7 +184,7 @@ input:checked ~ .bubble::after {
 
 .todo-list .todo-item {
 	display: flex;
-	align-items: center;
+	align-items: center; /* 垂直置中 */
 	background-color: #FFF;
 	padding: 1rem;
 	border-radius: 0.5rem;
@@ -225,6 +234,7 @@ input:checked ~ .bubble::after {
 	background-color: var(--danger);
 }
 
+/* 刪除線效果 */
 .todo-item.done .todo-content input {
 	text-decoration: line-through;
 	color: var(--grey);
