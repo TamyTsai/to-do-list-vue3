@@ -1,5 +1,67 @@
-# Vue 3 + Vite
+# 待辦清單
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## 關於待辦清單
+- 供使用者記錄待辦事項，可將待辦事項分類
+
+## 專案目的
+- 練習Vue3框架之運用
+
+
+## 專案畫面與功能介紹
+### 初始畫面
+- 上方可輸入自己的名字
+- 輸入待辦事項內容並選擇待辦事項分類後，按下「新增待辦」，可於下方清單中新增待辦事項
+
+<hr>
+
+### 完成待辦
+於清單點擊完成的待辦事項，可於待辦事項上新增刪除線
+
+<hr>
+
+### 編輯既有待辦事項
+可以修改已建立之待辦事項內容
+
+
+## 安裝
+### 安裝dependencies
+```bash
+$ npm install
+```
+
+### 啟動npm伺服器
+```bash
+$ npm run dev
+```
+
+### 開啟專案
+在瀏覽器網址列輸入以下網址即可看到專案首頁
+```bash
+http://localhost:5173/
+```
+
+<!-- ## 安裝
+### 取得專案
+```bash
+git clone 
+```
+### 移動到專案內
+```bash
+cd 
+```-->
+
+## 專案技術
+- 前端：HTML、Tailwind、Vue3
+- 版本控制：Git
+
+## 使用技術詳細說明
+- 以HTML及CSS撰寫，為一頁式靜態網頁
+- 以CSS及Tailwind撰寫樣式
+- 使用Vue3框架
+
+
+## 聯絡作者
+你可以透過email與我聯絡：tamy8677@gmail.com
+
+<i>最後更新：2024.7.28</i>
