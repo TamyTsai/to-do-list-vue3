@@ -56,7 +56,7 @@ cd
 ```-->
 
 ## 專案技術
-- 前端：HTML、Tailwind、Vue3
+- 前端：HTML、Tailwind CSS、Vue3
 - 版本控制：Git
 
 ## 使用技術詳細說明
