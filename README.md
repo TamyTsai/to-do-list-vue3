@@ -60,10 +60,9 @@ cd
 - 版本控制：Git
 
 ## 使用技術詳細說明
-- 以HTML及CSS撰寫，為一頁式靜態網頁
+- 以HTML、CSS及JavaScript撰寫，為一頁式靜態網頁
 - 以CSS及Tailwind撰寫樣式
 - 使用Vue3框架，以專注在視圖層
-
 
 ## 聯絡作者
 你可以透過email與我聯絡：tamy8677@gmail.com
