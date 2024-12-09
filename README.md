@@ -1,32 +1,34 @@
 # 待辦清單
-![待辦清單](https://github.com/user-attachments/assets/6331326d-185d-4571-ac3c-ed8f6fbd6914)
-
+![截圖 2024-12-09 封面](https://github.com/user-attachments/assets/31c84032-9630-473c-a1f9-af4359e3804c)
 
 ## 關於待辦清單
-- 供使用者記錄待辦事項，且可將待辦事項分類
+- 供使用者記錄待辦事項
 
 ## 專案目的
-- 練習Vue3框架之運用
+- 練習React框架之運用
 
 ## 專案畫面與功能介紹
 ### 初始畫面
-- 上方可輸入自己的名字
-- 輸入待辦事項內容並選擇待辦事項分類後，按下「新增待辦」，可於下方清單中新增待辦事項
-![截圖 2024-07-28 初始畫面](https://github.com/user-attachments/assets/175ef23b-4466-41e9-8cf9-ebf50f7af5cd)
-![截圖 2024-07-28 新建待辦](https://github.com/user-attachments/assets/d414077d-0e88-45bc-9023-fa338799fd0c)
+- 輸入待辦事項內容，按下「加入」，可於下方清單中新增待辦事項
+
+![截圖 2024-12-09 初始畫面](https://github.com/user-attachments/assets/cf9a1ea3-0e09-44c4-a6d9-d3ad1f6ac8a7)
+![截圖 2024-12-09 新增待辦](https://github.com/user-attachments/assets/3ebbc336-df7b-49a4-830c-21a4cd612ed1)
 
 <hr>
 
 ### 完成待辦
 於清單點擊完成的待辦事項，可於待辦事項上新增刪除線
-![截圖 2024-07-28 完成待辦](https://github.com/user-attachments/assets/864ced6a-9940-4fd4-883a-3d2def59e31e)
+
+![截圖 2024-12-09 完成待辦](https://github.com/user-attachments/assets/0488b9f5-983a-4cb0-aa84-9570aa73f427)
+
 
 <hr>
 
-### 編輯既有待辦事項
-可以修改已建立之待辦事項內容
-![截圖 2024-07-28 編輯待辦](https://github.com/user-attachments/assets/9bb133b8-b34b-416d-8739-811718bc7581)
+### 編輯、刪除既有待辦事項
+- 點擊筆圖示，可修改已建立之待辦事項內容
+- 點擊垃圾桶圖示，可刪除已建立之待辦事項
 
+![截圖 2024-12-09 編輯待辦](https://github.com/user-attachments/assets/71ba9df0-7b35-49ce-8419-409b2c70ec38)
 
 ## 安裝
 ### 安裝dependencies
@@ -56,15 +58,14 @@ cd
 ```-->
 
 ## 專案技術
-- 前端：HTML、Tailwind CSS、Vue3
+- 前端：HTML、CSS、React
 - 版本控制：Git
 
 ## 使用技術詳細說明
 - 以HTML、CSS及JavaScript撰寫，為一頁式靜態網頁
-- 以CSS及Tailwind撰寫樣式
-- 使用Vue3框架，以專注在視圖層
+- 使用React框架，以組件的方式編寫網頁，將網頁拆成不同部分來寫，減少程式碼撰寫的重複性
 
 ## 聯絡作者
 你可以透過email與我聯絡：tamy8677@gmail.com
 
-<i>最後更新：2024.7.28</i>
+<i>最後更新：2024.12.9</i>
